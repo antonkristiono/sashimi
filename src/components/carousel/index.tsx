@@ -12,7 +12,7 @@ import {
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 // And react-slick as our Carousel Lib
 import Slider from "react-slick";
-import { createClient } from "next-sanity";
+/* import { createClient } from "next-sanity"; */
 
 // Settings for the slider
 const settings = {
@@ -126,28 +126,28 @@ export default function CaptionCarousel(dataHeadline) {
   );
 }
 
-const client = createClient({
-  projectId: '87su1btw', // you can find this in sanity.json
-  dataset: 'production', // or the name you chose in step 1
-  useCdn: false, // `false` if you want to ensure fresh data
-  apiVersion: "2021-10-21",
-});
-
-export async function getStaticProps() {
-  const dataHeadline = [
-    {
-      _createdAt: "2022-03-08T09:28:00Z",
-      _id: "1f69c53d-418a-452f-849a-e92466bb9c75",
-      _rev: "xnBg0xhUDzo561jnWODd5e",
-      _type: "headline",
-      _updatedAt: "2022-03-08T09:28:00Z",
-      name: "Headline"
-    }
-  ];
-
-  return {
-    props: {
-      dataHeadline
-    }
-  };
-}
+/* const client = createClient({
+ *   projectId: '87su1btw', // you can find this in sanity.json
+ *   dataset: 'production', // or the name you chose in step 1
+ *   useCdn: false, // `false` if you want to ensure fresh data
+ *   apiVersion: "2021-10-21",
+ * });
+ *
+ * export async function getStaticProps() {
+ *   const dataHeadline = [
+ *     {
+ *       _createdAt: "2022-03-08T09:28:00Z",
+ *       _id: "1f69c53d-418a-452f-849a-e92466bb9c75",
+ *       _rev: "xnBg0xhUDzo561jnWODd5e",
+ *       _type: "headline",
+ *       _updatedAt: "2022-03-08T09:28:00Z",
+ *       name: "Headline"
+ *     }
+ *   ];
+ *
+ *   return {
+ *     props: {
+ *       dataHeadline
+ *     }
+ *   };
+ * } */
