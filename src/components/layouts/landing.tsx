@@ -1,12 +1,17 @@
+import React, {ReactNode} from 'react'
 import WithSubnavigation from "../nav";
 import CaptionCarousel from "../carousel"
 
-export default function LandingLayout({ children }) {
+interface Props {
+  children?: ReactNode
+}
+
+export default function LandingLayout({ children, ...props }: Props) {
   return (
     <>
       <WithSubnavigation />
       <CaptionCarousel />
-      <main>{children}</main>
+      <main {...props}>{children}</main>
     </>
   );
 }
