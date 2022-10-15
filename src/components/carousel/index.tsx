@@ -27,7 +27,7 @@ const settings = {
   slidesToScroll: 1,
 };
 
-export default function CaptionCarousel(dataHeadline) {
+export default function CaptionCarousel() {
   // As we have used custom buttons, we need a reference variable to
   // change the state
   const [slider, setSlider] = React.useState<Slider | null>(null);
