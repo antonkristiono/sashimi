@@ -77,18 +77,13 @@ export default function WithSubnavigation() {
           </Flex>
         </Flex>
 
-        <Stack
+        {/* <Stack
           flex={{ base: 1, md: 0 }}
           justify={"flex-end"}
           direction={"row"}
           spacing={6}
         >
-          <Button
-            as={"a"}
-            fontSize={"sm"}
-            fontWeight={400}
-            variant={"link"}
-          >
+          <Button as={"a"} fontSize={"sm"} fontWeight={400} variant={"link"}>
             Sign In
           </Button>
           <Button
@@ -103,7 +98,7 @@ export default function WithSubnavigation() {
           >
             Sign Up
           </Button>
-        </Stack>
+        </Stack> */}
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
@@ -127,9 +122,12 @@ const DesktopNav = () => {
               <Link
                 p={2}
                 // href={navItem.href ?? "#"}
-                fontSize={"sm"}
+                fontSize={"lg"}
                 fontWeight={500}
                 color={linkColor}
+                // display="inline-block"
+                // textAlign="center"
+                verticalAlign="middle"
                 _hover={{
                   textDecoration: "none",
                   color: linkHoverColor,
@@ -274,42 +272,42 @@ interface NavItem {
 }
 
 const NAV_ITEMS: Array<NavItem> = [
+  /* {
+   *   label: "Inspiration",
+   *   children: [
+   *     {
+   *       label: "Explore Design Work",
+   *       subLabel: "Trending Design to inspire you",
+   *       href: "#",
+   *     },
+   *     {
+   *       label: "New & Noteworthy",
+   *       subLabel: "Up-and-coming Designers",
+   *       href: "#",
+   *     },
+   *   ],
+   * },
+   * {
+   *   label: "Find Work",
+   *   children: [
+   *     {
+   *       label: "Job Board",
+   *       subLabel: "Find your dream design job",
+   *       href: "#",
+   *     },
+   *     {
+   *       label: "Freelance Projects",
+   *       subLabel: "An exclusive list for contract work",
+   *       href: "#",
+   *     },
+   *   ],
+   * }, */
   {
-    label: "Inspiration",
-    children: [
-      {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "#",
-      },
-      {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
-        href: "#",
-      },
-    ],
-  },
-  {
-    label: "Find Work",
-    children: [
-      {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "#",
-      },
-      {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "#",
-      },
-    ],
-  },
-  {
-    label: "Learn Design",
+    label: "Event",
     href: "#",
   },
   {
-    label: "Hire Designers",
+    label: "About",
     href: "#",
   },
 ];
