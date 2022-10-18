@@ -8,16 +8,15 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import { FaFacebook } from 'react-icons/fa';
-import { FaDiscord } from 'react-icons/fa';
-import { FaInstagram } from 'react-icons/fa';
+import { FaFacebook } from "react-icons/fa";
+import { FaDiscord } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 import SashimiJoin from "../../../public/sashimiJoin.jpg";
 
 export default function SplitScreen() {
-
-  const openInNewTab = url => {
-    window.open(url, '_blank', 'noopener,noreferrer');
+  const openInNewTab = (url: string | URL | undefined) => {
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -59,7 +58,9 @@ export default function SplitScreen() {
                 bg: "facebook.500",
               }}
               leftIcon={<FaFacebook />}
-              onClick={() => openInNewTab('https://web.facebook.com/groups/sashimi.salatiga') }
+              onClick={() =>
+                openInNewTab("https://web.facebook.com/groups/sashimi.salatiga")
+              }
             >
               Facebook
             </Button>
@@ -71,13 +72,24 @@ export default function SplitScreen() {
                 bg: "purple.500",
               }}
               leftIcon={<FaDiscord />}
-              onClick={() => openInNewTab('https://discord.com/channels/722853793753989147/722853793753989151') }
+              onClick={() =>
+                openInNewTab(
+                  "https://discord.com/channels/722853793753989147/722853793753989151"
+                )
+              }
             >
               Discord
             </Button>
-            <Button rounded={"full"} bg={"instagram"} leftIcon={<FaInstagram /> }
-            onClick={() => openInNewTab('https://www.instagram.com/sashimi_salatiga/') }
-            >Instagram</Button>
+            <Button
+              rounded={"full"}
+              bg={"instagram"}
+              leftIcon={<FaInstagram />}
+              onClick={() =>
+                openInNewTab("https://www.instagram.com/sashimi_salatiga/")
+              }
+            >
+              Instagram
+            </Button>
           </Stack>
         </Stack>
       </Flex>
