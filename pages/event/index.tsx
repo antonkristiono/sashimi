@@ -15,19 +15,8 @@ export default function Event(events: any) {
     <>
       <ul>
         {events.events.map(
-          (event: {
-            _id: Key | null | undefined;
-            name:
-              | string
-              | number
-              | boolean
-              | ReactElement<any, string | JSXElementConstructor<any>>
-              | ReactFragment
-              | ReactPortal
-              | null
-              | undefined;
-          }) => (
-            <li key={event._id}>{event?.eventName}</li>
+          (event: { _id: Key | null | undefined; eventName: any }) => (
+            <li key={event._id}>{event.eventName}</li>
           )
         )}
       </ul>
