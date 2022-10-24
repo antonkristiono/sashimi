@@ -9,10 +9,12 @@ import {
   ReactFragment,
   ReactPortal,
 } from "react";
+import HeroEvent from "../../src/components/heroEvent";
 
 export default function Event(events: any) {
   return (
     <>
+        <HeroEvent />
       <ul>
         {events.events.map(
           (event: { _id: Key | null | undefined; eventName: any }) => (
