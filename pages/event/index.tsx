@@ -10,15 +10,17 @@ import {
   ReactPortal,
 } from "react";
 import HeroEvent from "../../src/components/heroEvent";
+import CardEvent from "../../src/components/cardEvent";
 
 export default function Event(events: any) {
   return (
     <>
-        <HeroEvent />
+      <HeroEvent />
       <ul>
         {events.events.map(
           (event: { _id: Key | null | undefined; eventName: any }) => (
-            <li key={event._id}>{event.eventName}</li>
+            // <li key={event._id}>{event.eventName}</li>
+            <CardEvent key={event._id} eventName={event.eventName} />
           )
         )}
       </ul>
