@@ -3,46 +3,46 @@
  * import { usePreviewSubscription } from '../../lib/sanity' */
 import { createClient } from "next-sanity";
 import {
-  Key,
-  ReactElement,
-  JSXElementConstructor,
-  ReactFragment,
-  ReactPortal,
+    Key,
+    ReactElement,
+    JSXElementConstructor,
+    ReactFragment,
+    ReactPortal,
 } from "react";
 import HeroEvent from "../../src/components/heroEvent";
 import CardEvent from "../../src/components/cardEvent";
 
 export default function Event(events: any) {
-  return (
-    <>
-      <HeroEvent />
-      <ul>
-        {events.events.map(
-          (event: { _id: Key | null | undefined; eventName: any }) => (
-            // <li key={event._id}>{event.eventName}</li>
-            <CardEvent key={event._id} eventName={event.eventName} />
-          )
-        )}
-      </ul>
-    </>
-  );
+    return (
+        <>
+            <HeroEvent />
+            <ul>
+                {events.events.map(
+                    (event: { _id: Key | null | undefined; eventName: any }) => (
+                        // <li key={event._id}>{event.eventName}</li>
+                        <CardEvent key={event._id} eventName={event.eventName} />
+                    )
+                )}
+            </ul>
+        </>
+    );
 }
 
 const client = createClient({
-  projectId: "87su1btw",
-  dataset: "production",
-  apiVersion: "2021-10-21",
-  useCdn: false,
+    projectId: "87su1btw",
+    dataset: "production",
+    apiVersion: "2021-10-21",
+    useCdn: false,
 });
 
 export async function getServerSideProps() {
-  const events = await client.fetch(`*[_type == "event"]`);
+    const events = await client.fetch(`*[_type == "event"]`);
 
-  return {
-    props: {
-      events,
-    },
-  };
+    return {
+        props: {
+            events,
+        },
+    };
 }
 
 /* export async function getStaticProps({ preview = false }) {
